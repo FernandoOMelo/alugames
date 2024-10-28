@@ -7,6 +7,10 @@ function updateStatus(Jogo){
     let btn = Jogo.querySelector('a');
     let image = Jogo.querySelector('div.dashboard__item__img');
     if (jogoAlugado){
+        let Confirma = prompt('Tem certeza que deseja devolver o jogo? Responda com (1) para Sim e (2) para Não.');
+        if (Confirma != '1'){
+            return;
+        };
         btn.classList.remove('dashboard__item__button--return');
         btn.text = 'Alugar';
         image.classList.remove('dashboard__item__img--rented');
